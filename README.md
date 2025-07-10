@@ -212,16 +212,16 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## 📞 Support
 
-- 📧 Email: support@botly.com
-- 💬 Discord: [Join our community](https://discord.gg/botly)
-- 📖 Documentation: [docs.botly.com](https://docs.botly.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/your-repo/botly/issues)
+- 📧 Email: devfunwatcher@gmail.com
+- 💬 Discord: [Join our community](#)
+- 📖 Documentation: [docs.botly.com](https://botly-doc.vercel.app/)
+- 🐛 Issues: [GitHub Issues](https://github.com/miketropi/botly/issues)
 
 ## 🙏 Acknowledgments
 
 - Built with [React](https://reactjs.org/)
 - Styled with [Tailwind CSS](https://tailwindcss.com/)
-- Icons from [Heroicons](https://heroicons.com/)
+- Icons from [Lucide Icon](https://lucide.dev/)
 - Demo powered by [Vite](https://vitejs.dev/)
 
 ---
