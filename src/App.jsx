@@ -307,7 +307,7 @@ export default function App() {
               <h4 className="font-semibold text-slate-900 mb-4">Basic Setup</h4>
               <div className="bg-slate-900 rounded-lg p-6 overflow-x-auto">
                 <pre className="text-green-400 font-mono text-sm leading-relaxed">
-{`import Botly from 'botly-react'
+{`import { Botly } from 'botly-react'
 import 'botly-react/dist/botly-react.css'
 
 function App() {

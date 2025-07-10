@@ -115,7 +115,7 @@ export default function Documentation() {
             <h2 className="text-3xl font-semibold text-slate-900 mb-6">Basic Implementation</h2>
             <div className="bg-slate-900 rounded-lg p-6 overflow-x-auto">
               <pre className="text-green-400 font-mono text-sm leading-relaxed">
-{`import Botly from 'botly-react'
+{`import { Botly } from 'botly-react'
 import 'botly-react/dist/botly-react.css'
 
 function App() {
