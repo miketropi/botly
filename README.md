@@ -14,6 +14,12 @@ A modern, customizable chat widget component for React applications. Botly provi
 
 Try Botly instantly in your browser and explore the full documentation, interactive examples, and API reference at [https://botly-doc.vercel.app/](https://botly-doc.vercel.app/).
 
+## 🖼️ Preview
+
+You can find a preview image of Botly in the [`@/preview-images`](./preview-images) folder.
+
+![Botly Preview](./preview-images/botly-preview.png)
+
 
 This repository includes a comprehensive demo and documentation site. To run it locally:
 
