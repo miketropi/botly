@@ -51,7 +51,8 @@ npm install botly-react
 ## 🚀 Quick Start
 
 ```jsx
-import Botly from 'botly-react'
+import { Botly } from 'botly-react'
+import 'botly-react/dist/botly-react.css'
 
 function App() {
   return (
