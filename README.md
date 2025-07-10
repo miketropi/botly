@@ -18,7 +18,10 @@ Try Botly instantly in your browser and explore the full documentation, interact
 
 You can find a preview image of Botly in the [`@/preview-images`](./preview-images) folder.
 
-![Botly Preview](./preview-images/botly-preview.png)
+![Botly Preview - init](https://github.com/miketropi/botly/blob/master/preview-images/preview_1.png?raw=true)
+![Botly Preview - products](https://github.com/miketropi/botly/blob/master/preview-images/preview_2.png?raw=true)
+![Botly Preview - quick options](https://github.com/miketropi/botly/blob/master/preview-images/preview_3.png?raw=true)
+![Botly Preview - buttons](https://github.com/miketropi/botly/blob/master/preview-images/preview_4.png?raw=true)
 
 
 This repository includes a comprehensive demo and documentation site. To run it locally:

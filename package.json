@@ -9,7 +9,7 @@
     "url": "https://github.com/miketropi/botly/issues"
   },
   "homepage": "https://botly-doc.vercel.app/",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/botly.umd.js",
   "module": "dist/botly.es.js",
   "style": "dist/botly.css",
