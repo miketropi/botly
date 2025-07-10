@@ -1,6 +1,6 @@
 {
   "name": "botly-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/botly.umd.js",
   "module": "dist/botly.es.js",
   "style": "dist/botly.css",
