@@ -1,8 +1,35 @@
+
 # Botly - React Chat Widget
 
 A modern, customizable chat widget component for React applications. Botly provides a beautiful, accessible chat interface that can be easily integrated into any React project.
 
-## Features
+![Botly Demo](https://img.shields.io/badge/Status-Demo%20Ready-brightgreen)
+![React](https://img.shields.io/badge/React-18+-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3+-38B2AC)
+
+## 🚀 Live Demo & Documentation
+
+This repository includes a comprehensive demo and documentation site. To run it locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-repo/botly.git
+cd botly
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+Then visit `http://localhost:5173` to see:
+- **Interactive Demos**: Try different themes and configurations
+- **Live Documentation**: Complete API reference and examples
+- **Customization Guide**: Learn how to customize Botly for your needs
+
+## ✨ Features
 
 - 🎨 **Multiple Themes**: Modern, Dark, and Minimal built-in themes
 - 🎯 **Fully Customizable**: Custom themes, colors, icons, and branding
@@ -13,14 +40,15 @@ A modern, customizable chat widget component for React applications. Botly provi
 - 🎭 **Rich Message Types**: Text, buttons, cards, quick replies, and more
 - ♿ **Accessible**: Built with accessibility in mind
 - 🚀 **Lightweight**: Minimal dependencies, fast performance
+- 📚 **TypeScript Ready**: Full TypeScript support
 
-## Installation
+## 📦 Installation
 
 ```bash
 npm install botly-react
 ```
 
-## Quick Start
+## 🚀 Quick Start
 
 ```jsx
 import Botly from 'botly-react'
@@ -35,105 +63,31 @@ function App() {
         return [{ type: 'text', from: 'bot', text: `You said: ${text}` }]
       }}
       onInit={async () => {
-        return [{ type: 'text', from: 'bot', text: 'Hello! How can I help you?' }]
+        return [{ type: 'text', from: 'bot', text: 'Hello! How can I help?' }]
       }}
     />
   )
 }
 ```
 
-## Basic Usage
+## 🎨 Customization Examples
 
-### Required Props
-
-- `onSend`: Function that handles user messages and returns bot responses
-- `onInit`: Function that returns initial messages when chat opens
-
-### Example with AI Integration
-
-```jsx
-import Botly from 'botly-react'
-
-function App() {
-  const handleSend = async (text) => {
-    // Call your AI service
-    const response = await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: text })
-    })
-    
-    const data = await response.json()
-    
-    return [{ 
-      type: 'text', 
-      from: 'bot', 
-      text: data.response 
-    }]
-  }
-
-  const handleInit = async () => {
-    return [{ 
-      type: 'text', 
-      from: 'bot', 
-      text: 'Hello! I\'m your AI assistant. How can I help you today?' 
-    }]
-  }
-
-  return (
-    <Botly
-      onSend={handleSend}
-      onInit={handleInit}
-    />
-  )
-}
-```
-
-## Customization Options
-
-### 1. Themes
-
-#### Built-in Themes
-```jsx
-<Botly theme="modern" />  // Default modern design
-<Botly theme="dark" />    // Dark theme
-<Botly theme="minimal" /> // Clean minimal design
-```
-
-#### Custom Theme
+### Custom Theme
 ```jsx
 const customTheme = {
-  button: 'bg-blue-500 hover:bg-blue-600 text-white',
-  window: 'bg-white border border-blue-200 shadow-lg',
-  header: 'bg-blue-50 border-b border-blue-200',
-  user: 'bg-blue-600 text-white',
-  bot: 'bg-gray-50 border border-gray-200',
-  input: 'bg-gray-50 border border-gray-200 focus:border-blue-300',
-  sendButton: 'bg-blue-600 hover:bg-blue-700 text-white'
+  button: 'bg-gradient-to-br from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white border border-purple-400',
+  window: 'bg-white/95 backdrop-blur-xl border border-purple-200 shadow-xl',
+  header: 'bg-gradient-to-r from-purple-50 to-purple-100 border-b border-purple-200',
+  user: 'bg-purple-600 text-white shadow-md',
+  bot: 'bg-gray-50 border border-gray-200 text-gray-800',
+  input: 'bg-gray-50 border border-gray-200 focus:border-purple-300 focus:ring-2 focus:ring-purple-200',
+  sendButton: 'bg-purple-600 hover:bg-purple-700 text-white'
 }
 
 <Botly theme="modern" customTheme={customTheme} />
 ```
 
-### 2. Size Options
-
-```jsx
-<Botly size="small" />   // Compact size
-<Botly size="default" /> // Standard size (default)
-<Botly size="large" />   // Large size
-```
-
-### 3. Position Options
-
-```jsx
-<Botly position="bottom-right" /> // Default
-<Botly position="bottom-left" />
-<Botly position="top-right" />
-<Botly position="top-left" />
-```
-
-### 4. Custom Branding
-
+### Custom Branding
 ```jsx
 <Botly
   title="Support Assistant"
@@ -146,199 +100,124 @@ const customTheme = {
 />
 ```
 
-### 5. Custom Icons
-
+### AI Integration
 ```jsx
-const customChatIcon = (
-  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-  </svg>
-)
-
-<Botly chatIcon={customChatIcon} />
-```
-
-### 6. Behavior Options
-
-```jsx
-<Botly
-  autoOpen={true}              // Open chat automatically
-  showMessageIndicator={false} // Hide message count indicator
-  onOpen={() => console.log('Chat opened')}
-  onClose={() => console.log('Chat closed')}
-/>
-```
-
-## Message Types
-
-Botly supports various message types for rich interactions:
-
-### Text Messages
-```jsx
-{ type: 'text', from: 'bot', text: 'Hello there!' }
-```
-
-### Button Templates
-```jsx
-{
-  type: 'button-template',
-  from: 'bot',
-  text: 'Choose an option:',
-  buttons: [
-    { text: 'Option 1', value: 'option1' },
-    { text: 'Option 2', value: 'option2' }
-  ]
+const handleSend = async (text) => {
+  // Call your AI service
+  const response = await fetch('/api/chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: text })
+  })
+  
+  const data = await response.json()
+  
+  return [{ 
+    type: 'text', 
+    from: 'bot', 
+    text: data.response 
+  }]
 }
+
+<Botly onSend={handleSend} />
 ```
 
-### Card Templates
-```jsx
-{
-  type: 'card-template',
-  from: 'bot',
-  title: 'Product Name',
-  subtitle: 'Product description',
-  image: 'https://example.com/image.jpg'
-}
+## 📚 Documentation
+
+The demo site includes comprehensive documentation covering:
+
+- **Overview**: What is Botly and its key benefits
+- **Installation**: Setup instructions and dependencies
+- **Quick Start**: Basic implementation guide
+- **API Reference**: Complete props and methods documentation
+- **Customization**: Theme, styling, and branding options
+- **Examples**: Real-world usage examples
+
+## 🏗️ Project Structure
+
+```
+botly/
+├── src/
+│   ├── components/
+│   │   ├── Botly.jsx              # Main chat widget component
+│   │   ├── ChatWindow.jsx         # Chat window component
+│   │   ├── MessageInput.jsx       # Message input component
+│   │   ├── MessageRenderer.jsx    # Message rendering logic
+│   │   ├── Documentation.jsx      # Documentation page
+│   │   └── messages/              # Message type components
+│   │       ├── TextMessage.jsx
+│   │       ├── ButtonTemplate.jsx
+│   │       ├── CardTemplate.jsx
+│   │       └── QuickReplies.jsx
+│   ├── hooks/
+│   │   └── useChatLogic.js        # Chat logic hook
+│   ├── llm/
+│   │   └── mockLLM.js             # Mock AI responses
+│   ├── App.jsx                    # Demo and documentation app
+│   └── main.jsx                   # App entry point
+├── examples/
+│   └── customization-examples.jsx # Additional examples
+├── public/                        # Static assets
+├── README.md                      # This file
+├── CUSTOMIZATION.md               # Detailed customization guide
+└── package.json                   # Dependencies and scripts
 ```
 
-### Card Slides (Multiple Cards)
-```jsx
-{
-  type: 'card-slide',
-  from: 'bot',
-  cards: [
-    { title: 'Card 1', subtitle: 'Description 1', image: 'url1' },
-    { title: 'Card 2', subtitle: 'Description 2', image: 'url2' }
-  ]
-}
+## 🎯 Use Cases
+
+Botly is perfect for:
+
+- **Customer Support**: Live chat widgets for websites
+- **AI Assistants**: Chat interfaces for AI-powered applications
+- **E-commerce**: Product support and shopping assistance
+- **SaaS Applications**: User onboarding and help systems
+- **Educational Platforms**: Student support and Q&A systems
+- **Healthcare**: Patient support and appointment scheduling
+
+## 🔧 Development
+
+To contribute to Botly:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-repo/botly.git
+cd botly
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Run tests
+npm test
 ```
 
-### Quick Replies
-```jsx
-{
-  type: 'quick-replies',
-  from: 'bot',
-  text: 'Quick response options:',
-  replies: ['Yes', 'No', 'Maybe']
-}
-```
+## 📄 License
 
-## Complete Example
+MIT License - see [LICENSE](LICENSE) file for details.
 
-```jsx
-import Botly from 'botly-react'
+## 🤝 Contributing
 
-function App() {
-  const customTheme = {
-    button: 'bg-gradient-to-br from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white border border-purple-400',
-    window: 'bg-white/95 backdrop-blur-xl border border-purple-200 shadow-xl',
-    header: 'bg-gradient-to-r from-purple-50 to-purple-100 border-b border-purple-200',
-    user: 'bg-purple-600 text-white shadow-md',
-    bot: 'bg-gray-50 border border-gray-200 text-gray-800',
-    input: 'bg-gray-50 border border-gray-200 focus:border-purple-300 focus:ring-2 focus:ring-purple-200',
-    sendButton: 'bg-purple-600 hover:bg-purple-700 text-white'
-  }
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-  const customAvatar = (
-    <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-      <span className="text-white font-bold text-sm">A</span>
-    </div>
-  )
+## 📞 Support
 
-  const handleSend = async (text) => {
-    // Simulate AI response
-    const responses = [
-      { type: 'text', from: 'bot', text: `I understand you said: "${text}"` },
-      {
-        type: 'quick-replies',
-        from: 'bot',
-        text: 'Would you like to know more?',
-        replies: ['Yes, please', 'No, thanks', 'Maybe later']
-      }
-    ]
-    
-    return responses
-  }
+- 📧 Email: support@botly.com
+- 💬 Discord: [Join our community](https://discord.gg/botly)
+- 📖 Documentation: [docs.botly.com](https://docs.botly.com)
+- 🐛 Issues: [GitHub Issues](https://github.com/your-repo/botly/issues)
 
-  const handleInit = async () => {
-    return [
-      { type: 'text', from: 'bot', text: 'Hello! I\'m your AI assistant.' },
-      {
-        type: 'button-template',
-        from: 'bot',
-        text: 'What can I help you with today?',
-        buttons: [
-          { text: 'Get Support', value: 'support' },
-          { text: 'Learn More', value: 'learn' },
-          { text: 'Contact Us', value: 'contact' }
-        ]
-      }
-    ]
-  }
+## 🙏 Acknowledgments
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Botly
-        theme="modern"
-        customTheme={customTheme}
-        size="large"
-        position="bottom-right"
-        title="AI Assistant"
-        subtitle="Powered by GPT-4 • Always learning"
-        avatar={customAvatar}
-        autoOpen={false}
-        showMessageIndicator={true}
-        onOpen={() => console.log('Chat opened')}
-        onClose={() => console.log('Chat closed')}
-        onSend={handleSend}
-        onInit={handleInit}
-        className="custom-ai-assistant"
-        style={{ zIndex: 9999 }}
-      />
-    </div>
-  )
-}
-```
+- Built with [React](https://reactjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Icons from [Heroicons](https://heroicons.com/)
+- Demo powered by [Vite](https://vitejs.dev/)
 
-## Props Reference
+---
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `theme` | `string` | `'modern'` | Theme: 'modern', 'dark', 'minimal' |
-| `customTheme` | `object` | `null` | Custom theme object |
-| `position` | `string` | `'bottom-right'` | Position: 'bottom-right', 'bottom-left', 'top-right', 'top-left' |
-| `size` | `string` | `'default'` | Size: 'small', 'default', 'large' |
-| `title` | `string` | `'Botly Assistant'` | Chat window title |
-| `subtitle` | `string` | `'Online • Ready to help'` | Chat window subtitle |
-| `avatar` | `ReactNode` | `null` | Custom avatar component |
-| `chatIcon` | `ReactNode` | `null` | Custom chat button icon |
-| `closeIcon` | `ReactNode` | `null` | Custom close button icon |
-| `autoOpen` | `boolean` | `false` | Open chat automatically |
-| `showMessageIndicator` | `boolean` | `true` | Show message count indicator |
-| `onSend` | `function` | **Required** | Handle user messages |
-| `onInit` | `function` | **Required** | Initialize chat messages |
-| `onOpen` | `function` | `null` | Called when chat opens |
-| `onClose` | `function` | `null` | Called when chat closes |
-| `className` | `string` | `''` | Additional CSS classes |
-| `style` | `object` | `{}` | Additional inline styles |
-
-## Requirements
-
-- React 18+
-- Tailwind CSS 4.x
-
-## Browser Support
-
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-
-## License
-
-MIT License - see LICENSE file for details.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+Made with ❤️ by the Botly team
